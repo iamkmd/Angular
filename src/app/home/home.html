@@ -1,2 +1,29 @@
-//Interpolation example 
+<!-- //Interpolation example  -->
 <h1> {{ name }} </h1>
+<button (click)="onClick()">Click On me </button>
+<!-- Click Events all are the Built in Events we can use -->
+<br>
+<h2>Count : {{ count}} </h2>
+
+<input (input)="hasEvent($event.type)">
+<input (change)="hasEvent($event.type)">
+
+<select name="cars" (change)="hasEvent($event.type)">
+    <option value="">Verna</option>
+    <option value="">Toyota</option>
+    <option value="">Creata</option>
+</select>
+
+<br>
+<input  name="" id="" (blur)="hasEvent($event.type)">
+
+<br><br>
+<input (focus)="hasEvent($event.type)">
+
+<div class="div1" (mouseleave)="hasEvent($event.type)">
+     
+</div>
+
+<div class="div2" (mouseenter)="hasEvent($event.type)">
+
+</div>
