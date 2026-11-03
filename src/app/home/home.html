@@ -27,3 +27,44 @@
 <div class="div2" (mouseenter)="hasEvent($event.type)">
 
 </div>
+
+<!-- //Property Binding -->
+<br>
+<br>
+<button [disabled]="btn_Disable">Click Me</button>
+<button disabled="{{btn_Disable}}">Click Me</button>
+<button (click)="toggle()">Toggle</button>
+
+<!-- //In element  Attributes sometimes it can't work correctly with 
+//Boolean Values and we can't get the expected Output
+//So in that case we use Property Binding -->
+<input type="text" readonly="{{inputBinding}}">
+<input type="text" [readonly]="inputBinding">
+<br>
+<br>
+<img src="{{ url }}" alt="The Colurful Eyes">
+
+<!-- Signals -->
+<p> {{data()}} </p>
+<p> {{counter}} </p>
+
+
+<br>
+<br>
+<button (click)="updateData()">
+    Click me ....
+</button>
+
+<br>
+<br>
+<button (click)="updateCount()">
+    Click Me...
+</button>
+
+
+
+
+
+
+<br>
+

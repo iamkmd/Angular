@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, inputBinding, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -8,12 +8,25 @@ import { Component } from '@angular/core';
 })
 export class Home {
   
+  constructor(){
+     effect(() =>
+     {
+      console.log(this.counter);
+      console.log(this.data());  
+     })
+       
+  }
+   
+  
   name="Mansi";
   count=0;
+
   onClick()
   {
     this.count++;
   }
+
+
   
 //   • $event is a special Angular template variable that captures the DOM event object (like a MouseEvent or InputEvent).
 
@@ -26,4 +39,36 @@ export class Home {
   {
     console.log(action);
   }
+
+  //Property Binding 
+
+  btn_Disable=true;
+  toggle()
+  {
+    this.btn_Disable=!this.btn_Disable;
+  }
+
+  inputBinding= false;
+  url="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+  
+  // Signals
+  counter = 100;
+  data= signal(10);
+
+  updateCount()
+  {
+     this.counter++;
+  }
+
+  updateData()
+  {
+    this.data.set(this.data() + 5);
+  }
+
+  
+
+
+
+
+
 }
