@@ -1,4 +1,4 @@
-import { Component, effect, inputBinding, signal } from '@angular/core';
+import { Component, computed, effect, inputBinding, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -53,7 +53,7 @@ export class Home {
   
   // Signals
   counter = 100;
-  data= signal(10);
+  data= signal(10);                                
 
   updateCount()
   {
@@ -63,6 +63,31 @@ export class Home {
   updateData()
   {
     this.data.set(this.data() + 5);
+  }
+
+
+  //Update signals :- Computed signals
+  //Here we explicitly update the Area after updating the hieght
+  // hieght = 200;
+  // width = 1000;
+  // area : number = this.hieght * this.width;
+
+  // updateArea()
+  // {
+  //   this.hieght =this.hieght+ 5;
+  //   this.area = this.hieght * this.width;
+    
+  // }
+
+  // But don't want to do that because I have computed Signal which is derived the one reactive value from the expression and it only readonly value means you don't need to update manually you can Use Computed signals.... 
+
+  height = signal(100);
+  width = signal(20);
+  area = computed(() => (this.height() * this.width()));
+
+  updateArea()
+  {
+    this.height.set(this.height() + 5);
   }
 
   
