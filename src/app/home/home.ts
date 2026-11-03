@@ -135,8 +135,18 @@ export class Home {
      this.users.update((item) => [...item , 'Aesha']);
    }
 
+   //Get and set the input fields
    
+   data2 = signal('');
+   setTheInput(value: string)
+   {
+    this.data2.set(value);
+   }
 
+   resetTheValue()
+   {
+    this.data2.set("Mansi Kabade");
+   }
 
 
 

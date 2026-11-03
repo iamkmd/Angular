@@ -90,5 +90,15 @@
 <p> {{ data1() }} </p>
 <p> {{ users() }} </p>
 
+<!-- Get and Set the input fields  -->
+<span> {{ data2() }}</span>
+<br>
+<br>
+<input type="text" [value]="data2()" (input)="setTheInput($event.target.value)">
+
+<button (click)="resetTheValue()">
+    Set the Default Value
+</button>
+
 
 
