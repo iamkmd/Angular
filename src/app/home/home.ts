@@ -14,6 +14,24 @@ export class Home {
       console.log(this.counter);
       console.log(this.data());  
      })
+     effect(() =>
+     {
+        if(this.speed() > 50 )
+        {
+          this.color = 'Yellow';
+          this.fruit.set('Banana');
+        }
+        if(this.speed() > 70)
+        {
+          this.color= 'Orange';
+          this.fruit.set('Orange');
+        }
+        if(this.speed() > 100)
+        {
+          this.color = 'red';
+          this.fruit.set('Apple');
+        }
+     })
        
   }
    
@@ -83,6 +101,7 @@ export class Home {
 
   height = signal(100);
   width = signal(20);
+  //copmputed signals always use callback function don't write expression directly...
   area = computed(() => (this.height() * this.width()));
 
   updateArea()
@@ -92,6 +111,18 @@ export class Home {
 
   
 
+  //  Change the speed and color and fruit name using signals and effect.
+
+   speed = signal(10);
+   color = 'Green';
+   fruit= signal("Guava");
+
+   increaseSpeed()
+   {
+    this.speed.set(this.speed() + 5);
+   }
+
+   
 
 
 

@@ -69,11 +69,16 @@
 <button (click)="updateArea()">
     click me 
 </button>
+<br>
+
+<!-- Change the speed and color and fruit name using signals and effect -->
 
 
-
-
-
+<h2 [style.color]="color"> {{speed()}} </h2>
+<button (click)="increaseSpeed()">
+    Increasespeed
+</button>
 
 <br>
+<h2 [style.color]="color"> {{fruit() }} </h2>
 
