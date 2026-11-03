@@ -1,4 +1,4 @@
-import { Component, computed, effect, inputBinding, signal } from '@angular/core';
+import { Component, computed, effect, inputBinding, signal, WritableSignal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -112,7 +112,6 @@ export class Home {
   
 
   //  Change the speed and color and fruit name using signals and effect.
-
    speed = signal(10);
    color = 'Green';
    fruit= signal("Guava");
@@ -120,6 +119,20 @@ export class Home {
    increaseSpeed()
    {
     this.speed.set(this.speed() + 5);
+   }
+
+   //Set and Update 
+
+   data1:WritableSignal<string | number | boolean> = signal<string | number | boolean>('Ashish');
+   users = signal(['Bansi , Bani , Yashasvi']);
+
+   handleData()
+   {
+     this.data1.set(15);
+     //set will reset the all vakue and set it to new value 
+    //  this.users.set(['Aayush']);
+     //update method will add the new item at the end of the existing value
+     this.users.update((item) => [...item , 'Aesha']);
    }
 
    

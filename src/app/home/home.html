@@ -74,11 +74,21 @@
 <!-- Change the speed and color and fruit name using signals and effect -->
 
 
-<h2 [style.color]="color"> {{speed()}} </h2>
+<h2 [style.color]="color"> {{ speed() }} </h2>
 <button (click)="increaseSpeed()">
     Increasespeed
 </button>
 
 <br>
-<h2 [style.color]="color"> {{fruit() }} </h2>
+<h2 [style.color]="color"> {{ fruit() }} </h2>
+
+<!-- Signals Data types and Set and Update... -->
+<button (click)="handleData()">
+    Handle Data
+</button>
+
+<p> {{ data1() }} </p>
+<p> {{ users() }} </p>
+
+
 
